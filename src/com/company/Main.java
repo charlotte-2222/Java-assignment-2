@@ -9,14 +9,11 @@ public class Main {
         try {
             do {
 
-                String fname, lname;
                 double numA, numB;
                 Scanner input = new Scanner(in);
                 out.println("------------------");
-                out.print("Enter your first name: ");
-                fname = input.next();
-                out.print("\nEnter your last name: ");
-                lname = input.next();
+                out.print("Enter your full name: ");
+                String fullName = input.nextLine();
                 out.print("\nEnter your first number: ");
                 numA = input.nextInt();
                 out.print("\nEnter your second number: ");
@@ -24,10 +21,10 @@ public class Main {
 
                 int userChoice = OperationClass.menu();
                 switch (userChoice) {
-                    case 1 -> OperationClass.add(numA, numB);
-                    case 2 -> OperationClass.sub(numA, numB);
-                    case 3 -> OperationClass.multi(numA, numB);
-                    case 4 -> OperationClass.div(numA, numB);
+                    case 1 -> OperationClass.add(numA, numB, fullName);
+                    case 2 -> OperationClass.sub(numA, numB, fullName);
+                    case 3 -> OperationClass.multi(numA, numB, fullName);
+                    case 4 -> OperationClass.div(numA, numB, fullName);
                 }
 
                 out.println("one mo' gin?");
